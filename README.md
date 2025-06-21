@@ -2,108 +2,168 @@
   <img src="https://github.com/vVv-Keys/GhostSEC-Advanced-Threat-Intelligence-Platform/blob/main/ghostbanner.png" alt="GhostSEC Banner" width="40%" height="65%" />
 </p>
 
-# 👻 GhostSEC - Advanced Threat Intelligence Platform
+# 👻 GhostSEC - Ultimate Cyber Threat Intelligence Bot
 
-GhostSEC is an enterprise-ready, AI-enhanced Threat Intelligence Platform (TIP) designed for real-time IOC ingestion, ML-based prioritization, campaign detection, and threat visualization — all integrated with Discord, MISP, and your enterprise SIEMs.
+Enterprise-grade Discord bot delivering real-time cyber threat intelligence with multi-source aggregation, automated analysis, and rich formatting. Monitor 10+ premium threat feeds with zero-duplicate alerts and intelligent categorization.
 
-## 🔥 Key Features
+![Status](https://img.shields.io/badge/status-active-brightgreen) ![Sources](https://img.shields.io/badge/sources-10+-blue) ![Discord](https://img.shields.io/badge/discord-ready-7289da)
 
-### 🛰️ Multi-Source Threat Ingestion
+## Key Features
 
-* Ingests live CTI from 15+ open sources (ThreatFox, URLhaus, SANS ISC, CIRCL, etc.)
-* Real-time honeypot integration via Cowrie, Dionaea, DShield, and generic sensor webhook support
+### Intelligence Aggregation
 
-### 🧠 ML Threat Prioritization
+* **10+ Active Sources**: Government, research, commercial feeds
+* **Real-time Processing**: 15-minute update cycles
+* **Smart Categorization**: Malware, vulnerabilities, breaches, phishing, APT
+* **IOC Extraction**: Automatic detection of IPs, domains, hashes, URLs
 
-* Random Forest model scoring IOC severity using enriched feature sets
-* Confidence-based deduplication and alert filtering
+### Discord Integration
 
-### 🧬 Campaign Detection
+* **Rich Embeds**: ML-enhanced threat cards with correlation data
+* **Channel Routing**: Category-specific threat channels
+* **Interactive Commands**: 15+ advanced management commands
+* **Real-time Alerts**: Instant notifications with priority scoring
+* **Web Dashboard**: Browser-based threat intelligence interface
 
-* IOC correlation via shared infrastructure, malware family, ASN clustering
-* Named campaigns tracked over time with evolution snapshots
+### Intelligence Processing
 
-### 📊 Interactive Dashboard
+* **Machine Learning**: AI-powered threat prioritization and scoring
+* **Advanced Correlation**: Real-time threat relationship mapping
+* **Duplicate Filtering**: Hash-based prevention of redundant alerts
+* **MISP Integration**: Automated threat intelligence sharing
+* **Performance Optimized**: Concurrent processing and caching
 
-* Dash/Plotly UI with:
+### Sources Include
 
-  * Global threat heatmaps
-  * Campaign tracking views
-  * IOC database with TTL, filters, tags
-  * Export center (PDF, CSV, STIX, MISP, YARA)
+* **Government**: US-CERT, NIST NVD
+* **Research**: SANS ISC, Cisco Talos, FireEye
+* **Commercial**: AlienVault OTX, VirusTotal, Shodan, IBM X-Force
+* **Security News**: Krebs on Security, industry blogs
 
-### 🤖 Discord Bot (GhostSEC Bot)
+## Quick Start
 
-* 15+ commands (`!ghost help`, `!ghost status`, `!ghost update`, etc.)
-* Role-protected command execution
-* Live threat alerts, bot uptime, and feed sync
+### 1. Discord Bot Setup
 
-### 📤 Enterprise Integration
+1. Visit [https://discord.com/developers/applications](https://discord.com/developers/applications)
+2. Create new application and bot
+3. Copy the bot token
+4. Enable "Message Content Intent" in Bot settings
+5. Invite bot to your server with permissions: Send Messages, Embed Links, Read Message History
 
-* Custom webhook routing to: Splunk, QRadar, Sentinel, Teams, Slack, SMS
-* Export format support: STIX 2.1, TAXII 2.0, MISP JSON, CSV, PDF, YARA
-
----
-
-## 📦 Installation
+### 2. Environment Setup
 
 ```bash
-git clone https://github.com/your-org/ghostsec.git
-cd ghostsec
-pip install -r requirements.txt
-```
-
-Create a `.env` file based on `.env.example` and configure:
-
-```env
+# Required
 DISCORD_TOKEN=your_discord_bot_token
-CHANNEL_ID=123456789
-THREATFOX_URL=https://threatfox.abuse.ch/api/
+
+# Optional API Keys (enables premium sources)
+ALIENVAULT_API_KEY=your_otx_api_key
+VIRUSTOTAL_API_KEY=your_vt_api_key  
+SHODAN_API_KEY=your_shodan_key
+XFORCE_API_KEY=your_xforce_key
+
+# MISP Integration
+MISP_URL=https://your-misp-instance.com
+MISP_API_KEY=your_misp_api_key
+
+# Enterprise Webhooks
+SPLUNK_WEBHOOK=https://your-splunk.com/webhook
+SLACK_WEBHOOK_URL=https://hooks.slack.com/your/webhook
+TEAMS_WEBHOOK_URL=https://your-teams-webhook-url
+
+# Alert Notifications
+SMTP_SERVER=smtp.gmail.com
+SMTP_USERNAME=your_email@gmail.com
+SMTP_PASSWORD=your_app_password
+ALERT_TO_EMAILS=security@company.com,soc@company.com
 ```
 
----
-
-## 🚀 Running
-
-### Launch the bot:
+### 3. Run the Bot
 
 ```bash
 python start_ghostsec.py
 ```
 
-### Launch the dashboard:
+### 4. Discord Commands
 
-```bash
-python start_dashboard.py
+```
+!ghost help        - Show all commands
+!ghost status      - Bot statistics and uptime
+!ghost sources     - List threat intelligence sources
+!ghost update      - Manual feed update
+!ghost test high   - Send test alert
+!ghost dashboard   - Web dashboard access
+!ghost correlate   - Search threat correlations
+!ghost ml          - Machine learning status
+!ghost webhooks    - Enterprise webhook status
+!ghost export      - Export threat data
 ```
 
-Visit: [http://localhost:5000](http://localhost:5000)
-
----
-
-## 📚 Documentation
-
-* `SETUP_GUIDE.md` - Full system setup
-* `DISCORD_SETUP.md` - Discord permissions and roles
-* `enterprise_setup.md` - SIEM/webhook integrations
-* `API_GUIDE.md` - Feed structure, ML scoring pipeline
-
----
-
-## 🧪 Example Commands
+## Configuration
 
 ```bash
-!ghost help
-!ghost update
-!ghost status
-!ghost test critical
-!ghost sources
+# Update frequency (minutes)
+GHOSTSEC_UPDATE_INTERVAL=15
+
+# Cache retention (days)
+GHOSTSEC_MAX_CACHE_AGE_DAYS=7
+
+# Debug mode
+GHOSTSEC_DEBUG=false
+LOG_LEVEL=INFO
 ```
 
----
+## Enterprise Features
 
+### Web Dashboard
 
----
+Access the interactive threat intelligence dashboard at `http://localhost:5000` while the bot is running:
+
+* Real-time threat visualization with charts and graphs
+* IOC correlation network mapping
+* Advanced search and filtering capabilities
+* Threat export in JSON/CSV formats
+* ML-powered insights and analytics
+
+### Machine Learning Engine
+
+* Automatic threat priority scoring using Random Forest algorithms
+* Anomaly detection with Isolation Forest
+* Text similarity analysis for threat correlation
+* Continuous model training with historical data
+* Feature extraction from threat metadata and content
+
+### MISP Integration
+
+* Automatic IOC enrichment from MISP databases
+* Event creation for high-priority threats
+* Correlation with existing MISP events
+* Support for multiple MISP instances
+
+### Enterprise Webhooks
+
+* Splunk HEC integration for SIEM ingestion
+* Elasticsearch indexing for log management
+* IBM QRadar and Microsoft Sentinel support
+* Custom webhook endpoints with authentication
+* Automatic retry logic and delivery tracking
+
+### Advanced Correlation
+
+* IOC-based threat relationship mapping
+* Temporal clustering analysis
+* Campaign detection algorithms
+* Attack pattern recognition
+* TTPs (Tactics, Techniques, Procedures) correlation
+
+### Custom Alert System
+
+* Multi-channel notifications (Email, SMS, Slack, Teams)
+* Severity-based alert routing
+* Customizable notification rules and filters
+* Escalation workflows for critical threats
+* Rich HTML email formatting
+
 
 ## 💀 Credits
 
