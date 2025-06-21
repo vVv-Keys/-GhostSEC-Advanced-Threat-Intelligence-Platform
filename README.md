@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="[https://raw.githubusercontent.com/your-org/ghostsec/main/assets/ghostsec_banner.png](https://github.com/vVv-Keys/GhostSEC-Advanced-Threat-Intelligence-Platform/blob/main/ghostbanner.png)" alt="GhostSEC Banner" width="100%" />
+  <img src="https://github.com/vVv-Keys/GhostSEC-Advanced-Threat-Intelligence-Platform/blob/main/ghostbanner.png" alt="GhostSEC Banner" width="100%" />
 </p>
 
 # 👻 GhostSEC - Advanced Threat Intelligence Platform
