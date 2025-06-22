@@ -170,3 +170,4 @@ Access the interactive threat intelligence dashboard at `http://localhost:5000` 
 Built by GhostSec Labs. For defenders, red teams, and cyber intel professionals.
 
 This project is consistently being updated into a single unified application for full production/enterprise developments. 
+For testing, demonstrations, contributions or general inquiries feel free to join the Discord Community here: [404👻INTEL](https://discord.gg/ep4dE6Rq5G)
